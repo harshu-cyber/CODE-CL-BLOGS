@@ -1,0 +1,116 @@
+{%extends 'base.html' %}
+
+{%block title%} Welcome to IBLOGS {%endblock%}
+
+{%block content%}
+
+
+<div class="container-custom">
+
+
+    <!-- Set up your HTML -->
+    <div class="owl-carousel">
+
+        <body>
+            
+                    <ul>
+                        <li><a href="/">Back To Home</a></li>
+                        
+                    </ul>
+                
+            <main>
+                <section class="about">
+                    <h2>About Us</h2>
+                    <p>Welcome to <strong>Your Blog Name</strong>!</p>
+                    <p>At <strong>Your Blog Name</strong>, we believe that every story deserves to be heard. Our mission is to create a vibrant community where ideas, experiences, and creativity flourish.</p>
+                    <h3>Our Vision</h3>
+                    <p>We envision a space where diverse perspectives come together to inspire, educate, and entertain.</p>
+                    <h3>Meet the Team</h3>
+                    <p>Our passionate team of writers and editors are dedicated to curating high-quality content.</p>
+                    <h3>Join Us!</h3>
+                    <p>We invite you to explore our blog and contribute your insights. Thank you for being part of our journey!</p>
+                    <p>Happy blogging,<br>The <strong>Your Blog Name</strong> Team</p>
+                </section>
+            </main>
+        
+        </body>
+        
+
+
+
+
+
+        {% for cat in cats %}
+
+        <div class="card item" style="margin-left:10px;">
+
+            <div class="img-container">
+
+                <img src="/media/{{cat.image}}" class="responsive-img" alt="">
+
+            </div>
+            <div class="card-content">
+
+                <div class="card-title">
+                    {{cat.title}}
+                </div>
+
+                <p class="truncate">{{cat.description}}</p>
+                <div class="container center-align mt20">
+                    <a href="/category/{{cat.url}}" class="btn bg-primary">VIEW</a>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        {%endfor%}
+
+    </div>
+
+
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col s12 ">
+
+
+            {%for p in posts %}
+
+            <div class="row">
+
+                <div class="col s12 m8">
+
+
+                    {{p.content |truncatewords:60 | safe}}
+                    <div class="mt20">
+                        <a href="/blog/{{p.url}}" class="btn  bg-primary ">Read More..</a>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <img src="/media/{{p.image}}" class="responsive-img" style="margin-top:50px;">
+
+                </div>
+
+            </div>
+
+
+            {%endfor %}
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+{%endblock%}
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: #1e1e1e; /* Darker container */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.5); /* Soft white glow */
+            opacity: 0; /* Start invisible */
+            transform: translateY(20px); /* Start lower */
+            animation: fadeIn 0.5s forwards; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* End visible */
+                transform: translateY(0); /* End in original position */
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff; /* White text for heading */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #e0e0e0; /* Light label color */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #444; /* Dark border */
+            border-radius: 5px;
+            background-color: #333; /* Dark input background */
+            color: #ffffff; /* White text in inputs */
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6200ea; /* Purple button */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3700b3; /* Darker purple on hover */
+        }
+
+        /* Hover effect for the container */
+        .container:hover {
+            box-shadow: 0 0 20px rgba(98, 0, 234, 0.6), 0 0 30px rgba(255, 255, 255, 0.8); /* Increase shadow and glow on hover */
+            transform: scale(1.02); /* Slightly enlarge on hover */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+        }
+    </style>
+    <title>Contact Us</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>
